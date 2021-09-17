@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style >
+	* {
+    box-sizing: border-box;
+    padding: 0px;
+}
+
+	table{
+		border-collapse: collapse;
+		width: 100%;
+		line-height: 50px;
+
+	}
+	table th{
+		width: 33%;
+		padding: 8px;
+		height: 50px;
+	}
+	td{
+		text-align: left;
+  padding: 8px;
+	}
+	
+
+	</style>
+	{%  include 'student/sidebar.html' %}
+</head>
+<body>
+
+<div class ='col-2'>
+	<div class ='col-3'>
+			<li> <a href="/logout">Logout</a> </li>
+			<li>{{request.user.username}}</li>
+	</div>
+	<div  style="background-color:#4682B4; height: 60px;">
+	<li style="position: relative; top: 40%; color: white;">UPCOMING EVENTS</li>
+</div>
+	<div class ='col-4'>
+
+		<ul>
+			<li><img style="height:95px;" src="{{request.user.student.propic.url}}"></li>
+
+
+		</ul>
+
+		<ul>
+			
+			<li><b> Full Name:</b>{{request.user.student.first_name}} {{request.user.student.last_name}}</li>
+			<li><b>ID Number:</b> {{request.user.username}}</li>
+			<li><b>Admission Year:</b> 2018/2019</li>
+			<li><b>Class Year:</b>{{request.user.student.enroll_year}}</li>
+			<li><b>Section:</b> Section {{request.user.student.section.room_num}}</li>
+			
+		</ul>
+		
+			<ul style="float:right;">
+			<li><b>Program:</b> Computer Science and Engineering</li>
+			<li><b>Admission:</b> Undergraduate Regular</li>
+			<li><b>Class Year:</b> Third Year</li>
+			<li><b>Section:</b>+ Section 7</li>
+		
+		</ul>
+	</div>
+	<div class ='col-5'>
+		<h2>Upcoming Events</h2>
+		<br><br><br><br>
+		<div style="overflow-x:auto;">
+		<table border="1">
+			<th>Date</th>
+			<th>Activity</th>
+			<th>Admission For</th>
+
+	<tr>
+		<td><b>February 15, 2021 - September 10, 2021</b></td>
+		<td>Grade submission 2020/2021 Second Semester</td>
+		<td>Undergraduate Regular</td>
+	</tr>
+
+
+		</table>
+</div>
+
+
+	</div>
+</div>
+</body>
+
+</html>

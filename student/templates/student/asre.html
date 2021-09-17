@@ -1,0 +1,49 @@
+{% extends 'student/major.html' %}
+{% block content %}
+
+
+<form method="POST">
+			{% csrf_token %}
+		Subjects:-<select name="asm">
+			
+		{% for asses in assesments %}
+		 <option value="{{asses.id}}">{{asses.course}}</option>
+		{% endfor %}
+		</select>
+		<input type="submit" name="" value="go">
+		</form>
+	<div style="overflow-x:auto;">
+		<table >
+			
+			<th>SN</th>
+			<th> Assesment name</th>
+			<th>Assesment Type</th>
+			<th>Maximum Mark</th>
+			<th>Result</th>
+			<th>Grade</th>
+			{% for m,s in result.asgt.items %}
+			<tr>
+				
+				<td>{{forloop.counter}}</td>
+				<td>{{m}}</td>
+				<td>{{s.assesmenttype}}</td>
+				<td>{{s.maximummark}}</td>
+				<td>{{s.result}}</td>
+				
+			
+			</tr>
+			{%endfor%}
+	 	<tr>
+    <th colspan="3"> Totals</th>
+    <td>{{total}}</td>
+    <td>{{result.total}}/{{total}}</td>
+   
+    
+  </tr>
+  
+  
+		</table>
+	</div>
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+{% for j in arr%}
+	{{j.course}}<br>
+{%endfor%}
+{% for sec in sectionlist %}
+	<a href="{% url 'assesment' sec.id %}">{{sec}}</a><br>
+{%endfor%}
+</body>
+</html>

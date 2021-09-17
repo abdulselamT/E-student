@@ -1,0 +1,93 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style >
+	* {
+    box-sizing: border-box;
+    padding: 0px;
+			}
+	li{
+			list-style: none;
+		}
+	.col-1{
+		width: 15%;
+		float: left;
+		border-style: dotted;
+		overflow: scroll;
+	}
+	
+
+
+
+
+	
+	table{
+		border-collapse: collapse;
+	}
+	table th{
+		width: 33%;
+	}
+	#navb ul li{
+		display: inline-flex;
+		padding-left: 22px;
+	
+	}
+
+	</style>
+</head>
+<body>
+{%  include 'student/sidebar.html' %}
+<div class ='col-2'>
+	<div class ='col-3'>
+	</div>
+	<p style="background-color:green;">Upcoming events</p>
+	<div id='navb'>
+		<ul>
+			<li> <a href=""> Transcript</a></li>
+			<li><a href="">GPA summary</a></li>
+			<li><a href="">Grade report</a></li>
+			<li><a href="">Assesment result</a></li>
+			<li><a href="">Attendance</a></li>
+			<li><a href="">Cost sharing history</a></li>
+			
+</ul>
+</div>
+
+	<div class ='col-4'>
+
+		<ul>
+			<li><img style="height:95px;" src="{% static 'images/duis.jpg' %}"></li>
+		</ul>
+
+		<ul>
+			
+			<li>Full Name: Abdulselam Tamene Molla</li>
+			<li>ID Number: UGR/16676/11</li>
+			<li>Admission Year: 2018/2019</li>
+			<li>Dormitory:</li>
+		</ul>
+		
+			<ul style="float:right;">
+			<li>Program: Computer Science and Engineering</li>
+			<li>Admission: Undergraduate Regular</li>
+			<li>Class Year: Third Year</li>
+			<li>Section: Section 7</li>
+		
+		</ul>
+	</div>
+	<div class ='col-5'>
+	
+	</div>	
+	
+	</div>
+</div>
+</body>
+
+</html>

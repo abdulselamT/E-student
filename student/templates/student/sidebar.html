@@ -1,0 +1,145 @@
+
+{% load static %}
+<style>
+	* {
+    box-sizing: border-box;
+    padding: 0px;
+			}
+	li{
+			list-style: none;
+
+		}
+	.col-1{
+		width: 20%;
+		float: left;
+		
+		overflow: hidden;
+		border: 1px solid;
+ `		padding: 10px;
+  		box-shadow: 15px 20px 15px 20px  #F0F8FF;
+	}
+	.col-1 a{
+		text-decoration: none;
+		color: black;
+	}
+	.col-2{
+		width: 80%;
+		float: left;
+		overflow: hidden;
+		border: 1px solid;
+ `		padding: 10px;
+  		box-shadow: 5px 10px 5px 10px   #F0F8FF;
+
+	}
+	a{
+		text-decoration: none;
+	}
+	#acad{
+		display: none;
+		background-color: cyan;
+		padding-left: 25px;
+	}
+ #acad li{
+	list-style: circle;
+}
+#req li{
+	list-style: circle;
+}
+
+	#req{
+		display: none;
+		background-color: cyan;
+		padding-left: 25px;
+	}
+	.col-3{
+
+		height: 80px;
+		border-style: solid;
+		background-color: skyblue;
+		overflow: scroll;
+	}
+	.col-3 li {
+		float: right;
+	}
+	.col-2 ul{
+		display: inline-block;
+		margin: 10px;
+		overflow: hidden;
+	}
+	.col-4 .col-4-1{
+		width: 25%;
+		float: left;
+		border-style: solid;
+		overflow: hidden;
+	}
+.im{
+	width: 15px;
+	height: 20px;
+}
+#astulog{
+	width: 25%;
+	height: 40%;
+	position: relative;
+	left: 40%;
+}
+@media only screen and (max-width: 600px) {
+  .col-1 {
+    background-color: lightblue;
+    width: 100%;
+  }
+  .col-2{
+  	width: 100%;
+  }
+}
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<script src="https://kit.fontawesome.com/75ccf35409.js" crossorigin="anonymous"></script>
+	
+</head>
+<body>
+<div class ='col-1'>
+	<ul>
+		<li><img id='astulog' src="{% static 'images/astu_logo.svg' %}"></li><br><br><br><hr>
+		<li><img class='im' src="{% static 'images/user-solid.svg' %}"> <a href="{% url 'accountsetting' %}">Student Profile</a></li>
+		<li><img class='im' src="{% static 'images/enroll.png' %}"> <a href="">Enrollment Record</a></li>
+		<li><img class='im' src="{% static 'images/acad.png' %}" ><a href="{% url 'assesmentresult' %}">Assesment_history</a></li>
+		<li><button onclick="seeme()">Accadamics</button></li>
+		<div id="acad">
+		<li><a href="{% url 'accountsetting' %}">register</a></li>
+		<li><a href="">Curriculum</a></li>
+		<li><a href="">Courseaudit</a></li>
+		<li><a href="">Payment</a></li>
+		</div>
+		<li><button onclick="req()">REquest</button></li>
+			<div id="req">
+				<li><a href="">Add Drop</a></li>
+				<li><a href="">Withdrawal</a></li>
+				<li><a href="">Clearances</a></li>
+				<li><a href="">Complaint Results</a></li>
+				<li><a href="">Course Exemption</a></li>
+		</div>
+		<li><a href="">Temporary ID</a></li>
+		<li><a href="">Dormitory</a></li>
+		<i class="fas fa-user"></i>
+	</ul>
+</div>
+
+
+<script>
+	function seeme(){
+		document.getElementById('acad').style.display='block';
+	}
+
+	function req(){
+		document.getElementById('req').style.display='block';
+	}
+
+</script>
+</body>
+</html>
+

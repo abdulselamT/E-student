@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h3>register here</h3>
+<form method="POST">
+	{%csrf_token%}
+{% for j in extra %}
+username{{j}}
+{% for m in category %}
+ <input type='float' name="user{{j}}{{m}}">
+{%endfor%}
+<br>
+{%endfor%}
+<input type="submit" name="">
+</form>
+</body>
+</html>

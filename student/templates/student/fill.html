@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+<body>
+	<form method="POST">
+		{%csrf_token%}
+<table>
+	<th>Student</th>
+	{% for s, m in tt.items %}
+	
+	
+	<th>{{s}}({{m.maximummark}})</th>
+	{% endfor %}
+{% for j in students %}
+<tr>
+	<td>{{j.student}}</td>
+	{% for m,s in j.asgt.items %}
+		<td><input type="float"  name="{{j.student}}{{m}}" value="{{s.result}}",max={{s.maximummark}}></td>
+		
+	{% endfor %}
+</tr>
+	{% endfor %}
+</table>
+
+<input type="checkbox" name="calculatetotal">Calculate Total<br><br>
+<input type="checkbox" name="finished">Submit to Higher<br><br>
+
+<input type="submit" name="" value="update"> 
+</form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register</title>
+</head>
+<h1>Register here</h1>
+<body>
+<form method="POST" action="">
+		{% csrf_token %}
+		{{customerform.as_p}}
+	<input  type="submit" value="Register Account">
+					{{form.errors}}   		
+Already have an account? <a href= > Login</a>
+					
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>
+<body>
+<form method="POST">
+	{%csrf_token%}
+	<select name="asm">
+		{% for j in asm %}
+		<option value="{{j.id}}">{{j}}</option>
+		{% endfor %}
+	</select>
+	
+	AssessmentName:-<input required="" type="text" name='name'>
+	Assessment Type:-<input required="" type="text" name='tpe'>
+	MaximumMARk<input required="" type="float" name="maxmark",>
+	
+	<input type="submit" name="" value="ADDROW">
+
+</form>
+</body>
+</html>

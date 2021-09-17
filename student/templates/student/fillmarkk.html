@@ -1,0 +1,42 @@
+{% extends 'student/main.html' %}
+{% load static %}
+{% block content %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <div class="row">
+		<div class="col-lg-6">
+			<div class="box-element" id="form-wrapper">
+				<form id="form" method="POST"  enctype="multipart/form-data">
+					{% csrf_token %}
+					<div id="user-info">
+						
+					</div>
+					
+					<div id="shipping-info">
+						{% for s, m in tt.items %}
+	
+		
+							
+							<th>{{s}}({{m.maximummark}})</th>
+								{{k.label}} :-{{k}}<br>
+							
+						
+							
+						
+						{%endfor%}
+					</div>
+					{{form.errors}}
+					<hr>
+				<input id="form-button" class="btn btn-success btn-block" type="submit" value="register">
+				</form>
+			</div>
+
+			<br>
+
+			{{customerform.errors}}
+			
+			
+		</div>
+
+		
+	</div>
+{% endblock content %}

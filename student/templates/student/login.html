@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>loginPage</title>
+	<style>
+* {
+    box-sizing: border-box;
+    padding: 0px;
+}
+.inner{
+	height: 90%;
+	width: 100%;
+	
+}
+.inner li{
+	list-style: none;
+	height: 100%;
+	width: 100%;
+	
+	float: left;
+}
+li input{
+	height: 40px;
+	width: 100%;
+}
+#login{
+	
+	width: 50%;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	background-color: cyan;
+}
+#login img{
+	width: 20$;
+	height: 40%;
+	position: absolute;
+	left: 20%;
+}
+h4{
+	position: absolute;
+	left: 20%;
+}
+</style>
+</head>
+<body>
+<div id='login'>
+	<form method="POST">
+		{%csrf_token%}
+	<img src="{% static 'images/astu_logo.svg' %}"><br><br><br><br>
+	<h4>ASTU estudent</h4><br>
+	<div class='inner'>
+	<ul>
+	<li><input type="text" name="username" placeholder="username"></li><br><br>
+	<li><input type="password" name="password" placeholder="password"></li><br><br>
+	<input style="background-color:skyblue;width:30%;height: 40px;" type="submit"  value="sign in "><br><br>
+	<li>forgot password</li>
+	</div>
+	</form>
+</div>
+</body>
+</html>

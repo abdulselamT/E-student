@@ -1,0 +1,91 @@
+
+{% extends 'student/mainstudent.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style >
+	
+	table{
+		border-collapse: collapse;
+		width: 100%;
+	}
+	th{
+		background-color: #A52A2A;
+		color: white;
+		height: 50px;
+	}
+	tr:nth-child(even){
+		background-color: #FFE4C4;
+	}
+	
+	#navb ul li{
+		display: inline-flex;
+		padding-left: 22px;
+	
+	}
+
+	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class ='col-4'>
+		<table border="1">
+			
+			<th>Code</th>
+			<th> Course Title</th>
+		
+			<th>ResultI</th>
+			<th>StatusI</th>
+			<th>Standingforsec</th>
+			<th>Standingfromall</th>
+	{%	for k in assesments %}
+			<tr>
+				<td>{{k.course.course_id}}</td>
+				<td>{{k.course.course_name}}</td>
+				<td>{{k.result}}</td>
+				<td style="background-color:{{k.status}};"></td>
+			
+				<td>{{k.standing_sec}}</td>
+				<td>{{k.standing_all}}</td>
+			</tr>
+		{%endfor%}
+	 	<tr>
+    <th colspan="2">Semister Total</th>
+    <td>{{totaltr.total}}</td>
+    <td>{{totaltr.avg}}</td>
+    <td>{{totaltr.standing_sec}}</td>
+    <td>{{totaltr.standing_all}}</td>
+    
+  </tr>
+  <tr>
+  	{% if totaltr.complete %}
+	<th colspan="3">Acadamic Status : Promoted</th>
+{% else %}
+	<th colspan="3">Acadamic Status : Failed</th>
+{% endif %}
+    
+    
+  </tr>
+  
+		</table>
+	</div>
+	<div class ='col-5'>
+	
+	</div>	
+	
+	</div>
+</div>
+</body>
+
+</html>
+
+
+{% endblock %}
